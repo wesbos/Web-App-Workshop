@@ -8,12 +8,6 @@ export async function drawToCanvas(video, canvas, filter) {
   }
 }
 
-export async function start() {
-  // look for the video element
-  const video = document.querySelector('video');
-  if (!video) throw Error('No video Element Found on the page');
-}
-
 export async function populateVideo(videoEl) {
   const stream = await navigator.mediaDevices.getUserMedia({ video: { width: 1280, height: 720 } });
   videoEl.srcObject = stream;

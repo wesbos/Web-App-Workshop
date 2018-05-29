@@ -1,17 +1,13 @@
-import { drawToCanvas, populateVideo, detectFaces, drawFaces } from './index';
+import { drawToCanvas, populateVideo, detectFaces, drawFaces } from './video';
 import { takePhoto, countdown } from './photo';
-
-// // 1. Async + Await + Promises
-// // 1. Module Loader via Parcel
-// // 1. Code Splitting for Filters
-// // 1. Offline Support via Service Workers
+import registerServiceWorker from './src/registerServiceWorker';
 
 async function start() {
   const videoEl = document.querySelector('video');
   const canvasEl = document.querySelector('canvas');
   const strip = document.querySelector('.strip');
-  const startButton = document.querySelector('button.start');
   const filterButtons = document.querySelectorAll('button.filter');
+  const countdownButton = document.querySelector('.count');
 
   if (!videoEl) throw Error('No video Element Found on the page');
   await populateVideo(videoEl);
@@ -24,18 +20,16 @@ async function start() {
     drawToCanvas(videoEl, canvasEl);
   }, 16);
 
-  filterButtons.forEach(button => button.addEventListener('click', attachFilter));
-
-  async function attachFilter() {
-    clearInterval(interval);
-    // lazy load the filters
-    const filters = await import('./filters');
-    interval = setInterval(() => {
-      drawToCanvas(videoEl, canvasEl, filters[this.dataset.filter]);
-    }, 16);
-  }
-
-  const countdownButton = document.querySelector('.count');
+  filterButtons.forEach(button =>
+    button.addEventListener('click', async () => {
+      clearInterval(interval);
+      // lazy load the filters
+      const filters = await import('./filters');
+      interval = setInterval(() => {
+        drawToCanvas(videoEl, canvasEl, filters[this.dataset.filter]);
+      }, 16);
+    })
+  );
 
   canvasEl.addEventListener('click', () => {
     takePhoto(videoEl, canvasEl, strip);
@@ -48,23 +42,9 @@ async function start() {
 }
 
 start();
+registerServiceWorker();
 
-const serviceWorker = false;
-// Register Service Worker
-if ('serviceWorker' in navigator && serviceWorker) {
-  window.addEventListener('load', async () => {
-    const registration = await navigator.serviceWorker.register('./service-worker.js', {
-      scope: '/',
-    });
-    // Registration was successful
-    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    // listen for updates
-    registration.onupdatefound = () => {
-      alert('Hey, there is an update to this app! Just refresh your browser to see');
-    };
-  });
-}
-
+// this is just a little bit of code that makes our tooling reload the page if and then the modules are updated
 if (module.hot) {
   module.hot.dispose(() => {
     window.location.reload();
