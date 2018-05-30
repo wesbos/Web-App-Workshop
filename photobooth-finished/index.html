@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="button-list">
+    <button class="filter">No filter</button>
+    <button class="filter" data-filter="rgbSplit">RGB Split Filter</button>
+    <button class="filter" data-filter="greenScreen">Green Screen</button>
+    <button class="filter" data-filter="redEffect">Red Effect</button>
+    <button class="count"> Count Me Down
+    </button>
+
+    <div class="rgb">
+      <label for="rmin">RM</label>
+      <input type="range" min=0 max=255 value="40" name="rmin">
+      <label for="rmax">RX</label>
+      <input type="range" min=0 max=255 value="255" name="rmax">
+      <label for="gmin">GM</label>
+      <input type="range" min=0 max=255 name="gmin" value="40">
+      <label for="gmax">GX</label>
+      <input type="range" min=0 max=255 name="gmax" value="255">
+      <label for="bmin">BM:</label>
+      <input type="range" min=0 max=255 name="bmin" value="40">
+      <label for="bmax">BX:</label>
+      <input type="range" min=0 max=255 name="bmax" value="255">
+    </div>
+
+  </div>
+  <div class="photobooth">
+    <div class="wrap">
+      <video></video>
+      <canvas></canvas>
+      <span class="countdown"></span>
+    </div>
+    <div class="strip">
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
