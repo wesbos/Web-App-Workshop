@@ -30,7 +30,7 @@ body.taking > * {
 
 .wrap video {
   position: absolute;
-  width: 300px;
+  width: 30%;
   top: 10px;
   right: 10px;
 }

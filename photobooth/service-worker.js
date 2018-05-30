@@ -1,6 +1,6 @@
 console.log('Hello from the service worker!!');
 
-const CACHE_NAME = 'photobooth-v21';
+const CACHE_NAME = 'photobooth-v2';
 const urlsToCache = ['/index.html'];
 
 self.addEventListener('install', event => {
