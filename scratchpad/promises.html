@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Promises</title>
+</head>
+
+<body>
+
+  <script>
+    fetch('https://api.github.com/users/wesbos')
+      .then(data => data.json())
+      .then(data => {
+        console.log(data);
+      })
+
+  </script>
+</body>
+
+</html>

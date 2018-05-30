@@ -7,7 +7,7 @@ lib/
 
 Larger src libraries might have nested folders
 
-
+## Module Organization and Best Practices
 src/
   photo/
     index.js
