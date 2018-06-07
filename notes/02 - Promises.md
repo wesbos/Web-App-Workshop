@@ -230,4 +230,4 @@ Let's write some code to:
 There are a few other methods we won't go into, but are worth noting:
 
 * somePromise.finally(); - whatever happens, run this
-* Promse.race(); - run this after the first one comes back
+* Promise.race(); - run this after the first one comes back

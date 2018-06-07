@@ -40,7 +40,7 @@ button.addEventListener('click', () => {
 });
 ```
 
-Now there ar ea few things about modules that we need to understand, lets go through them now.
+Now there are a few things about modules that we need to understand, lets go through them now.
 
 ## Scope
 Scope - or where your code is available - is an important thing here.
@@ -176,7 +176,7 @@ export function sayHello() {
 }
 ```
 
-You simply tack a `export` infront of most expressions.
+You simply tack a `export` in front of most expressions.
 
 We also have the option of exporting multiple items at the bottom of the file:
 

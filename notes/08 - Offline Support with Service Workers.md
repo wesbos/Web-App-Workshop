@@ -41,12 +41,12 @@ if ('serviceWorker' in navigator) {
 
 A few important notes about the above:
 
-1. The service-worker.js is the file that runs in the background - the code above is just client-side code to register it.
+1. The `service-worker.js` is the file that runs in the background - the code above is just client-side code to register it.
 1. The service worker must be in the root of your document that you wish to cache. If the service worker is in a sub-folder, it is unable to cache anything above it.
 
 ## Service Worker Dev Tools
 
-The Dev tools with Service Workers are a must-have. We can get into some really weird spots where we cache our app.js, and before we write the code to clear that cache, we will be stuck in that cache forever.
+The Dev tools with Service Workers are a must-have. We can get into some really weird spots where we cache our `app.js`, and before we write the code to clear that cache, we will be stuck in that cache forever.
 
 The dev tools allows us to clear or bypass that cache, refresh the service worker, and emulate offline mode.
 
