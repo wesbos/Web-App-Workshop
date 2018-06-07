@@ -4,7 +4,7 @@ ES6 Brought JavaScript modules to the language.
 
 Modules allow us to share code between files in a project, this has a number of benefits over previous script tags:
 
-* No relying on on global scope
+* No relying on global scope
 * Sharing code between projects is easier
 * Standard system for sharing code with open source project
 * Allow us to build tooling and libraries that are focused
@@ -40,7 +40,7 @@ button.addEventListener('click', () => {
 });
 ```
 
-Now there ar ea few things about modules that we need to understand, lets go through them now.
+Now there are a few things about modules that we need to understand, lets go through them now.
 
 ## Scope
 Scope - or where your code is available - is an important thing here.
@@ -53,7 +53,7 @@ Each file is a module, and a module has it's own scope. Any functions or variabl
 
 Modules are great because instead of coding a behemoth scripts.js, we can code small modules that do one thing.
 
-One huge benefit to using modules is that if you aren't using a function - like calculateBill.js - you can just stop importing it to that file. If no files are left importing that function, you bundler will simple exclude that file from the final bundle.js file thus making your application smaller!
+One huge benefit to using modules is that if you aren't using a function - like calculateBill.js - you can just stop importing it to that file. If no files are left importing that function, your bundler will simply exclude that file from the final bundle.js file thus making your application smaller!
 
 ## Dependencies
 
