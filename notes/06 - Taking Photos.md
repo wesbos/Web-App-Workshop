@@ -29,7 +29,7 @@ Once we're done that, let's work through the rest of the code together:
 export function takePhoto(video, canvas, strip) {
   console.log('Taking photooo');
   document.body.classList.add('taking');
-  const data = canvas.toDataURL('image/jpg');
+  const data = canvas.toDataURL('image/jpeg');
   const img = document.createElement('img');
   img.src = data;
   const link = document.createElement('a');
