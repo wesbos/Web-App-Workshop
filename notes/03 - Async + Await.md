@@ -9,7 +9,7 @@ This is where async+await comes in. Remember this PHP code?
 ```php
 $weather = getTheWeatherFor('Dayton');
 $pictures = getPicturesOfWeather(weather);
-$resizedPictures - resizePicturesOfWeather(pictures);
+$resizedPictures = resizePicturesOfWeather(pictures);
 uploadNewPictures($resizedPictures);
 // Done!
 ```
