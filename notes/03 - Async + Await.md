@@ -163,7 +163,7 @@ and then we will wrap that function in a high order function that tacks a .catch
 
 ```js
 function handleError(fn) {
-  return function(...parans) {
+  return function(...params) {
     return fn(...params).catch(function(err) {
       // Handle the error here
     })
