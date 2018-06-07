@@ -176,7 +176,7 @@ export function sayHello() {
 }
 ```
 
-You simply tack a `export` infront of most expressions.
+You simply tack a `export` in front of most expressions.
 
 We also have the option of exporting multiple items at the bottom of the file:
 

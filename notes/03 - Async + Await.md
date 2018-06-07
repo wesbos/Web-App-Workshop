@@ -2,7 +2,7 @@
 
 Now that we are comfortable with Promises, we're going to learn about Async + Await.
 
-Promises are great, but the syntax is stil a little callback-y.
+Promises are great, but the syntax is still a little callback-y.
 
 This is where async+await comes in. Remember this PHP code?
 
@@ -22,7 +22,7 @@ $scott = getScott();
 // we have both
 ```
 
-The above code will wait and block scott, while wes is being fetched.
+The above code will wait and block Scott, while Wes is being fetched.
 
 Async + Await is the best of both worlds - we get synchronous looking code without blocking anything else on the page.
 

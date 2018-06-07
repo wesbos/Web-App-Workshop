@@ -2,7 +2,7 @@
 
 Flow control in JavaScript is hard.
 
-Promises are an iou for something that will happen in the future.
+Promises are an IOU for something that will happen in the future.
 
 * ajax call returning data
 * access to a user's webcam
@@ -131,7 +131,7 @@ getTheWeatherFor('Dayton')
   });
 ```
 
-By returning a promise from a .then() funciton, we can chain them for as long as we like!
+By returning a promise from a .then() function, we can chain them for as long as we like!
 
 Even better, if an error were to happen anywhere along the .then() chain, we can catch it with a single `.catch()` chained onto the end:
 
@@ -182,7 +182,7 @@ getTheWeatherFor('Dayton')
   .then((pictures) => resizePicturesOfWeather(pictures))
   .then((resizedPictures) =>uploadNewPictures(resizedPictures))
   .then(() => {
-    console.log('Done!);
+    console.log('Done!');
   })
   .catch((err) => {
     console.log('Something Happened!', err);
@@ -204,9 +204,9 @@ Now there are many other browser APIs that are built on promises, and we will se
 
 Together, let's create a function called `wait()` that:
 
-1. Can be passed any number of miliseconds to wait
-1. After the number of miliseconds has passed, return a wise quote.
-1. If the number of miliseconds is less than 300, error out
+1. Can be passed any number of milliseconds to wait
+1. After the number of milliseconds has passed, return a wise quote.
+1. If the number of milliseconds is less than 300, error out
 
 We should be able to:
 
@@ -219,15 +219,15 @@ Another neat part of working with promises is that you can fire requests off con
 
 Let's write some code to:
 
-1. wait(600) and wait(2000) - wait for both to be resolved afer 2000ms
+1. wait(600) and wait(2000) - wait for both to be resolved after 2000ms
 1. Fetch both
   * https://api.github.com/users/wesbos
   * https://api.github.com/users/stolinski
 
 
-## Additonal Info
+## Additional Info
 
-There are a few other methds we won't go into, but are worth noting:
+There are a few other methods we won't go into, but are worth noting:
 
 * somePromise.finally(); - whatever happens, run this
-* Promse.race(); - run this after the first one comes back
+* Promise.race(); - run this after the first one comes back
