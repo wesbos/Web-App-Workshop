@@ -182,7 +182,7 @@ getTheWeatherFor('Dayton')
   .then((pictures) => resizePicturesOfWeather(pictures))
   .then((resizedPictures) =>uploadNewPictures(resizedPictures))
   .then(() => {
-    console.log('Done!);
+    console.log('Done!');
   })
   .catch((err) => {
     console.log('Something Happened!', err);
